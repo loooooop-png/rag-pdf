@@ -1,1 +1,1 @@
-from .rag_OSCAT import create_pdf_rag
+from .rag_OSCAT import load_pdf, get_result

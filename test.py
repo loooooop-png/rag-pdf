@@ -1,5 +1,5 @@
 # 导入 create_pdf_rag 函数
-from rag import create_pdf_rag
+from rag import load_pdf, get_result
 import os
 
 # 设置环境变量以配置 OpenAI API
@@ -13,7 +13,8 @@ if __name__ == "__main__":
 
     try:
         # 调用 create_pdf_rag 函数处理 PDF 并获取结果
-        result = create_pdf_rag(pdf_path, query)
+        retriever = load_pdf(pdf_path)
+        result = get_result(query, retriever)
         
         # 打印答案
         print("Answer:", result["answer"])
